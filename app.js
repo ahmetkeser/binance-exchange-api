@@ -1,7 +1,7 @@
 // Elementleri Şeçme Alanı
-const amountElement = document.getElementById("amount")
-const firstSelect = document.getElementById("firstCurrency")
-const secondSelect = document.getElementById("secondCurrency")
+const amountElement = document.getElementById("amount") //adet girişi
+const firstSelect = document.getElementById("firstCurrency") // türü
+const secondSelect = document.getElementById("secondCurrency") // coin
 const currency = new Currency("USDT","TRY")
 eventListeners()
 
@@ -19,5 +19,7 @@ function eventListeners(){
 function exchangeCurrency(){
     currency.chageAmount(amountElement.value)
     currency.exchange()
+    .then(result => console.log(result))
+    .catch(err => console.log())
 }
 //https://api.binance.com/api/v3/avgPrice?symbol=USDTTRY
