@@ -20,9 +20,12 @@ function eventListeners(){
     
 }
 function exchangeCurrency(){
-    currency.chageAmount(amountElement.value)
+    setInterval(function () {   // Verileri 1sn ara ile günceller
+        currency.chageAmount(amountElement.value)
     currency.exchange()
     .then(result => ui.displayResult(result))
     .catch(err => console.log())
+    }, 1000);
+    
 }
 //https://api.binance.com/api/v3/avgPrice?symbol=USDTTRY

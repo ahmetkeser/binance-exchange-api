@@ -8,8 +8,6 @@ class Currency{
     exchange(){
        
         
-       
-        
         return new Promise((resolve,reject) =>{
             fetch(this.url   + this.secondCurrency + this.firstCurrency)
         .then(response => response.json())
